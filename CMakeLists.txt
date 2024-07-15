@@ -24,3 +24,12 @@ project(do_nothing)
 pico_sdk_init()
 
 # rest of your project
+add_executable(do_nothing
+    do_nothing.c
+)
+
+# Add pico_stdlib library which aggregates commonly used features
+target_link_libraries(do_nothing pico_stdlib)
+
+# create map/bin/hex/uf2 file in addition to ELF.
+pico_add_extra_outputs(do_nothing)
